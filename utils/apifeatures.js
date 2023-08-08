@@ -1,5 +1,6 @@
 
-function search(query,queryStr){
+function search(queryStr){
+
     const keyword = queryStr.keyword
     ?{
         name:{
@@ -8,20 +9,11 @@ function search(query,queryStr){
         }
     }
     : {};
-    return query.find({...keyword})
+    return keyword
 }
 
-function filter(query,queryStr){
-    const queryCopy={...queryStr}
-    console.log(queryCopy);
 
-    //removing some feilds for category
-    const removeFields=["keyword","page","limit"]
-    removeFields.forEach(key=>delete queryCopy(key))
-    console.log(queryCopy);
-}
 
 module.exports={
-    search,
-    filter
+    search
 }
